@@ -2413,3 +2413,13 @@ html.js .rv:not(.in-view) {
     display: none;
   }
 }
+/* Spam honeypot (invisible to real users) */
+.hp-field {
+  position: absolute !important;
+  left: -9999px !important;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+}

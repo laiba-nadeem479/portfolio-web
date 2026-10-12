@@ -891,6 +891,12 @@
                 <textarea id="cf-message" name="message" class="form-control" rows="4" placeholder="Tell me a bit about your product, timeline or role..." required></textarea>
               </div>
 
+              <!-- Honeypot: hidden from humans, bots fill it -->
+              <div class="hp-field" aria-hidden="true">
+                <label for="cf-website">Leave this field empty</label>
+                <input type="text" id="cf-website" name="_honey" tabindex="-1" autocomplete="off" />
+              </div>
+
               <button type="submit" class="btn btn-primary" style="width: 100%;">
                 <span>Send Message</span>
                 <svg class="ico" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>

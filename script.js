@@ -496,6 +496,11 @@
 
   // Contact Form Submission
   var TO_EMAIL = 'laibanadeem631@gmail.com';
+  // Paste your FormSubmit random ID here (from the activation/confirmation email)
+  // so your email isn't used in the request URL. Until then, the email is used.
+  var FORM_ID = '6763bc6b0b841f0a1a5bf52438568181 ';
+  var ENDPOINT = 'https://formsubmit.co/ajax/' + (FORM_ID && FORM_ID.indexOf('PASTE') !== 0 ? FORM_ID : TO_EMAIL);
+  var lastSent = 0;
   var contactForm = $('#contactForm');
   var formFeedback = $('#formFeedback');
 
@@ -505,6 +510,26 @@
       var name = $('#cf-name').value.trim();
       var email = $('#cf-email').value.trim();
       var message = $('#cf-message').value.trim();
+      var honey = ($('#cf-website') || {}).value || '';
+
+      // Honeypot filled => bot. Pretend success, send nothing.
+      if (honey) {
+        contactForm.reset();
+        if (formFeedback) {
+          formFeedback.textContent = 'Thank you! Your message has been sent successfully. I will get back to you shortly.';
+          formFeedback.className = 'form-feedback success';
+        }
+        return;
+      }
+
+      // Simple cooldown: one message per 30 seconds
+      if (Date.now() - lastSent < 30000) {
+        if (formFeedback) {
+          formFeedback.textContent = 'Please wait a few seconds before sending another message.';
+          formFeedback.className = 'form-feedback error';
+        }
+        return;
+      }
 
       if (!name || !/^\S+@\S+\.\S+$/.test(email) || message.length < 5) {
         if (formFeedback) {
@@ -519,13 +544,15 @@
       submitBtn.disabled = true;
       submitBtn.textContent = 'Sending message…';
 
-      fetch('https://formsubmit.co/ajax/' + TO_EMAIL, {
+      fetch(ENDPOINT, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify({
           name: name,
           email: email,
           message: message,
+          _honey: '',
+          _captcha: 'false',
           _subject: 'Portfolio Inquiry from ' + name,
           _replyto: email
         })
@@ -533,6 +560,7 @@
       .then(function (res) { return res.json(); })
       .then(function (data) {
         if (data.success === 'true' || data.success === true) {
+          lastSent = Date.now();
           contactForm.reset();
           if (formFeedback) {
             formFeedback.textContent = 'Thank you! Your message has been sent successfully. I will get back to you shortly.';
