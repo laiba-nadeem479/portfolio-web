@@ -1,0 +1,965 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Laiba Nadeem — Full Stack Developer & AI Solutions</title>
+    <meta
+      name="description"
+      content="Portfolio of Laiba Nadeem, Full Stack Developer building AI-powered web applications with Next.js, React, Node.js, TypeScript and Python."
+    />
+    <meta name="theme-color" content="#08090d" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23f97316'/%3E%3Ctext x='32' y='43' font-family='sans-serif' font-weight='800' font-size='28' text-anchor='middle' fill='%23ffffff'%3ELN%3C/text%3E%3C/svg%3E"
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Stylesheet -->
+    <script>if ("IntersectionObserver" in window) document.documentElement.classList.add("js");</script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Canvas Particle Constellation Layer -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Background Ambient FX -->
+    <div class="bg-fx" aria-hidden="true">
+      <div class="mesh-grid"></div>
+      <div class="glow-orb glow-1"></div>
+      <div class="glow-orb glow-2"></div>
+      <div class="glow-orb glow-3"></div>
+    </div>
+
+    <!-- =============================================================
+         HEADER & FLOATING NAVBAR
+         ============================================================= -->
+    <header class="site-header" id="siteHeader">
+      <a href="#home" class="logo-link" aria-label="Laiba Nadeem — Home">
+        <div class="logo-badge">LN</div>
+        <span class="logo-text">Laiba.</span>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="nav-desktop" aria-label="Main Navigation">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#education" class="nav-link">Education</a>
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Navigation Actions -->
+      <div class="nav-actions">
+        <!-- CTA Button -->
+        <a href="#contact" class="btn btn-primary btn-sm">Hire Me</a>
+
+        <!-- Mobile Toggle Hamburger -->
+        <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle Mobile Menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Mobile Nav Drawer -->
+    <div class="mobile-nav" id="mobileNav">
+      <a href="#home" class="nav-link">Home</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#skills" class="nav-link">Skills</a>
+      <a href="#projects" class="nav-link">Projects</a>
+      <a href="#education" class="nav-link">Education</a>
+      <a href="#services" class="nav-link">Services</a>
+      <a href="#contact" class="nav-link">Contact</a>
+      <a href="resume/Laiba-Nadeem-Resume.pdf" class="btn btn-ghost" download="Laiba-Nadeem-Resume.pdf">Download Resume</a>
+    </div>
+
+    <main>
+      <!-- =============================================================
+           HERO SECTION
+           ============================================================= -->
+      <section class="hero" id="home">
+        <div class="wrap">
+          <div class="hero-grid">
+            <div class="hero-content">
+              <!-- Live Availability Status -->
+              <div class="badge hero-status-pill">
+                <span class="pulse-dot"></span>
+                <span>Available for Full Stack &amp; AI Roles</span>
+              </div>
+
+              <!-- Main Heading: User Name -->
+              <h1 class="hero-title"> Hi, I am <br />
+                <span class="gradient-text">Laiba Nadeem</span>
+              </h1>
+
+              <!-- Typewriter Subheadline -->
+              <div class="hero-role-wrapper">
+                A <span class="typewriter-text" id="typewriterRole">Full Stack Developer.</span><span class="caret"></span>
+              </div>
+
+              <!-- Concise Bio -->
+              <p class="hero-bio">
+               Full Stack Developer crafting clean, elegant and responsive web experiences with modern technologies — from thoughtful interfaces to reliable APIs.
+              </p>
+
+              <!-- Hero Actions -->
+              <div class="hero-actions">
+                <a href="#projects" class="btn btn-primary">
+                  <span>Explore Work</span>
+                  <svg class="ico" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+                <a href="resume/Laiba-Nadeem-Resume.pdf" class="btn btn-ghost" download="Laiba-Nadeem-Resume.pdf">
+                  <svg class="ico" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                  <span>Resume</span>
+                </a>
+                <a href="#contact" class="btn btn-ghost">
+                  <svg class="ico" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                  <span>Contact</span>
+                </a>
+              </div>
+
+            </div>
+
+            <!-- 3D Interactive Coding Terminal Card -->
+            <div class="hero-visual">
+              <div class="avatar-stage code-stage">
+                <!-- Floating Technology Pills -->
+                <div class="float-pill fp-1"><span>⚡ Next.js 14</span></div>
+                <div class="float-pill fp-2"><span>🐍 Python</span></div>
+                <div class="float-pill fp-3"><span>⚛️ React.js</span></div>
+                <div class="float-pill fp-4"><span>✨ AI Integrations</span></div>
+
+                <div class="avatar-card-3d code-terminal-card">
+                  <div class="avatar-ambient-glow"></div>
+
+                  <!-- Prominent "Open to Work" Badge Placement -->
+                  <div class="code-work-badge">
+                    <span class="pulse-dot"></span>
+                    <span>Open to Work</span>
+                  </div>
+
+                  <!-- Terminal Window -->
+                  <div class="code-terminal-inner">
+                    <div class="terminal-bar">
+                      <div class="terminal-dots">
+                        <span class="t-dot red"></span>
+                        <span class="t-dot yellow"></span>
+                        <span class="t-dot green"></span>
+                      </div>
+                      <span class="terminal-filename">developer.ts</span>
+                      <span class="terminal-tag">TypeScript</span>
+                    </div>
+
+                    <div class="terminal-code">
+                      <div class="code-line"><span class="line-num">1</span><span class="kw">interface</span> <span class="type">FullStackDev</span> {</div>
+                      <div class="code-line"><span class="line-num">2</span>  <span class="prop">name</span>: <span class="type">string</span>;</div>
+                      <div class="code-line"><span class="line-num">3</span>  <span class="prop">status</span>: <span class="str">"Open to Work"</span>;</div>
+                      <div class="code-line"><span class="line-num">4</span>  <span class="prop">stack</span>: <span class="type">string</span>[];</div>
+                      <div class="code-line"><span class="line-num">5</span>}</div>
+                      <div class="code-line"><span class="line-num">6</span></div>
+                      <div class="code-line"><span class="line-num">7</span><span class="kw">const</span> <span class="var">laiba</span>: <span class="type">FullStackDev</span> = {</div>
+                      <div class="code-line"><span class="line-num">8</span>  <span class="prop">name</span>: <span class="str">"Laiba Nadeem"</span>,</div>
+                      <div class="code-line"><span class="line-num">9</span>  <span class="prop">status</span>: <span class="str">"Open to Work"</span>,</div>
+                      <div class="code-line"><span class="line-num">10</span>  <span class="prop">stack</span>: [<span class="str">"Next.js"</span>, <span class="str">"React"</span>, <span class="str">"Python"</span>],</div>
+                      <div class="code-line"><span class="line-num">11</span>  <span class="prop">focus</span>: <span class="str">"AI Web Apps"</span></div>
+                      <div class="code-line"><span class="line-num">12</span>};</div>
+                      <div class="code-line"><span class="line-num">13</span></div>
+                      <div class="code-line"><span class="line-num">14</span><span class="comment">// 🚀 Ready for impactful builds</span></div>
+                      <div class="code-line"><span class="line-num">15</span><span class="fn">laiba</span>.<span class="fn-call">buildProducts</span>();<span class="code-cursor"></span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =============================================================
+           ABOUT SECTION
+           ============================================================= -->
+      <section class="section about" id="about">
+        <div class="wrap">
+          <div class="section-head">
+            <span class="badge">Background</span>
+            <h2 class="section-title">About <span class="gradient-text">Me</span></h2>
+            <p class="section-desc">Passionate about clean code, intuitive user interfaces, and the transformative potential of AI in daily software.</p>
+          </div>
+
+          <div class="about-grid">
+            <div class="glass about-card">
+              <h3 class="about-lead">
+                I am a Full Stack Developer based in Lahore, Pakistan, pursuing BS Information Technology and certified in Advanced Python Programming from UET Lahore.
+              </h3>
+              <p class="about-body">
+                I love turning complex requirements into streamlined, user-friendly digital products. My projects—such as <b>QuizMaster</b> and the <b>ResumeAI Analyzer</b>—feature secure role-based access, real-time analytics, automated scoring algorithms, and seamless AI generation workflows.
+              </p>
+
+              <div class="story-highlights">
+                <div class="highlight-box">
+                  <b>Architecture Mindset</b>
+                  <span>Modular code, typed contracts, responsive layouts and robust database schemas.</span>
+                </div>
+                <div class="highlight-box">
+                  <b>AI Integration</b>
+                  <span>Connecting LLMs and image generation APIs to practical user-facing workflows.</span>
+                </div>
+              </div>
+
+              <div class="hero-actions" style="margin-top: 10px;">
+                <a href="resume/Laiba-Nadeem-Resume.pdf" class="btn btn-primary" download="Laiba-Nadeem-Resume.pdf">Download CV</a>
+                <a href="#contact" class="btn btn-ghost">Discuss Opportunities</a>
+              </div>
+            </div>
+
+            <!-- Quick Facts List -->
+            <div class="facts-list">
+              <div class="fact-card">
+                <div class="fact-icon-wrap">
+                  <svg class="ico" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                </div>
+                <div class="fact-info">
+                  <span class="fact-label">Location</span>
+                  <span class="fact-value">Baghbanpura, Lahore, Pakistan</span>
+                </div>
+              </div>
+
+              <div class="fact-card">
+                <div class="fact-icon-wrap">
+                  <svg class="ico" viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+                </div>
+                <div class="fact-info">
+                  <span class="fact-label">Education</span>
+                  <span class="fact-value">BS Information Technology</span>
+                </div>
+              </div>
+
+              <div class="fact-card">
+                <div class="fact-icon-wrap">
+                  <svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+                </div>
+                <div class="fact-info">
+                  <span class="fact-label">Certification</span>
+                  <span class="fact-value">Advanced Python (UET Lahore)</span>
+                </div>
+              </div>
+
+              <div class="fact-card">
+                <div class="fact-icon-wrap">
+                  <svg class="ico" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                </div>
+                <div class="fact-info">
+                  <span class="fact-label">Primary Stack</span>
+                  <span class="fact-value">Next.js · React · Node · Python</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =============================================================
+           SKILLS & TECH STACK SECTION
+           ============================================================= -->
+      <section class="section skills" id="skills">
+        <div class="wrap">
+          <div class="section-head">
+            <span class="badge">Toolbox</span>
+            <h2 class="section-title">Technologies &amp; <span class="gradient-text">Skills</span></h2>
+            <p class="section-desc">A curated set of battle-tested languages, frameworks, and database tools I use to build scalable web applications.</p>
+          </div>
+
+          <!-- Category Filter Tabs -->
+          <div class="skills-filter-nav">
+            <button class="filter-btn active" data-filter="all">All Tools</button>
+            <button class="filter-btn" data-filter="frontend">Frontend</button>
+            <button class="filter-btn" data-filter="backend">Backend &amp; APIs</button>
+            <button class="filter-btn" data-filter="database">Database</button>
+            <button class="filter-btn" data-filter="tools">DevOps &amp; Tools</button>
+          </div>
+
+          <!-- Tech Grid -->
+          <div class="tech-grid">
+            <div class="tech-card" data-category="frontend">
+              <div class="tech-icon-holder"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" loading="lazy" /></div>
+              <span class="tech-name">React</span>
+              <span class="tech-category-tag">Frontend</span>
+            </div>
+            <div class="tech-card" data-category="frontend">
+              <div class="tech-icon-holder"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js" loading="lazy" /></div>
+              <span class="tech-name">Next.js</span>
+              <span class="tech-category-tag">Full Stack</span>
+            </div>
+            <div class="tech-card" data-category="frontend">
+              <div class="tech-icon-holder"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" loading="lazy" /></div>
+              <span class="tech-name">TypeScript</span>
+              <span class="tech-category-tag">Language</span>
+            </div>
+            <div class="tech-card" data-category="frontend">
+              <div class="tech-icon-holder"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" loading="lazy" /></div>
+              <span class="tech-name">JavaScript</span>
+              <span class="tech-category-tag">Core</span>
+            </div>
+            <div class="tech-card" data-category="frontend">
+              <div class="tech-icon-holder"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind CSS" loading="lazy" /></div>
+              <span class="tech-name">Tailwind CSS</span>
+              <span class="tech-category-tag">Styling</span>
+            </div>
+            <div class="tech-card" data-category="backend">
+              <div class="tech-icon-holder"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" loading="lazy" /></div>
+              <span class="tech-name">Node.js</span>
+              <span class="tech-category-tag">Runtime</span>
+            </div>
+            <div class="tech-card" data-category="backend">
+              <div class="tech-icon-holder"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" loading="lazy" /></div>
+              <span class="tech-name">Python</span>
+              <span class="tech-category-tag">Language / AI</span>
+            </div>
+            <div class="tech-card" data-category="backend">
+              <div class="tech-icon-holder"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" alt="Flask" loading="lazy" /></div>
+              <span class="tech-name">Flask</span>
+              <span class="tech-category-tag">Backend</span>
+            </div>
+            <div class="tech-card" data-category="database">
+              <div class="tech-icon-holder"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" loading="lazy" /></div>
+              <span class="tech-name">MySQL</span>
+              <span class="tech-category-tag">Relational DB</span>
+            </div>
+            <div class="tech-card" data-category="database">
+              <div class="tech-icon-holder"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prisma/prisma-original.svg" alt="Prisma" loading="lazy" /></div>
+              <span class="tech-name">Prisma</span>
+              <span class="tech-category-tag">ORM</span>
+            </div>
+            <div class="tech-card" data-category="tools">
+              <div class="tech-icon-holder"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" loading="lazy" /></div>
+              <span class="tech-name">Git</span>
+              <span class="tech-category-tag">VCS</span>
+            </div>
+            <div class="tech-card" data-category="tools">
+              <div class="tech-icon-holder"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" loading="lazy" /></div>
+              <span class="tech-name">GitHub</span>
+              <span class="tech-category-tag">Collaboration</span>
+            </div>
+            <div class="tech-card" data-category="tools">
+              <div class="tech-icon-holder"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code" loading="lazy" /></div>
+              <span class="tech-name">VS Code</span>
+              <span class="tech-category-tag">IDE</span>
+            </div>
+            <div class="tech-card" data-category="tools">
+              <div class="tech-icon-holder"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg" alt="Vercel" loading="lazy" /></div>
+              <span class="tech-name">Vercel</span>
+              <span class="tech-category-tag">Deployment</span>
+            </div>
+          </div>
+
+          <!-- Solar System Interactive Orbit -->
+          <div class="orbit-showcase">
+            <h3 class="orbit-headline">
+              Crafting modern full-stack ecosystems powered by <span>Node.js</span>, <span>React</span>, and <span>intelligent APIs</span>.
+            </h3>
+            <div class="orbit-stage">
+              <div class="orbit-ring ring-inner"></div>
+              <div class="orbit-ring ring-mid"></div>
+              <div class="orbit-ring ring-outer"></div>
+
+              <!-- Orbit Core -->
+              <div class="orbit-core" title="LN Core">
+                <svg class="ico" style="width: 2.2em; height: 2.2em;" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+              </div>
+
+              <!-- Inner Ring Satellites -->
+              <div class="orbit-satellite" style="--angle: 0deg; --dist: 130px; --speed: 28s;">
+                <div class="orbit-badge" title="React.js">⚛️</div>
+              </div>
+              <div class="orbit-satellite" style="--angle: 120deg; --dist: 130px; --speed: 28s;">
+                <div class="orbit-badge" title="Next.js">Nx</div>
+              </div>
+              <div class="orbit-satellite" style="--angle: 240deg; --dist: 130px; --speed: 28s;">
+                <div class="orbit-badge" title="Node.js">⬢</div>
+              </div>
+
+              <!-- Mid Ring Satellites -->
+              <div class="orbit-satellite" style="--angle: 45deg; --dist: 205px; --speed: 46s;">
+                <div class="orbit-badge" title="TypeScript">TS</div>
+              </div>
+              <div class="orbit-satellite" style="--angle: 165deg; --dist: 205px; --speed: 46s;">
+                <div class="orbit-badge" title="Python">🐍</div>
+              </div>
+              <div class="orbit-satellite" style="--angle: 285deg; --dist: 205px; --speed: 46s;">
+                <div class="orbit-badge" title="Tailwind CSS">Tw</div>
+              </div>
+
+              <!-- Outer Ring Satellites -->
+              <div class="orbit-satellite" style="--angle: 80deg; --dist: 280px; --speed: 68s;">
+                <div class="orbit-badge" title="MySQL">🐬</div>
+              </div>
+              <div class="orbit-satellite" style="--angle: 200deg; --dist: 280px; --speed: 68s;">
+                <div class="orbit-badge" title="Prisma ORM">◬</div>
+              </div>
+              <div class="orbit-satellite" style="--angle: 320deg; --dist: 280px; --speed: 68s;">
+                <div class="orbit-badge" title="Git">Git</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Marquee Ticker -->
+          <div class="marquee-container" aria-hidden="true">
+            <div class="marquee-track">
+              <span class="marquee-pill">⚛️ React 18</span>
+              <span class="marquee-pill">⚡ Next.js 14 App Router</span>
+              <span class="marquee-pill">🟦 TypeScript</span>
+              <span class="marquee-pill">🟢 Node.js REST APIs</span>
+              <span class="marquee-pill">🐍 Python Algorithms</span>
+              <span class="marquee-pill">🐬 MySQL Relational DB</span>
+              <span class="marquee-pill">◬ Prisma ORM</span>
+              <span class="marquee-pill">🎨 Tailwind CSS Design</span>
+              <span class="marquee-pill">🔐 NextAuth.js Authentication</span>
+              <span class="marquee-pill">🤖 AI Prompt Engineering</span>
+              <!-- Repeat for smooth loop -->
+              <span class="marquee-pill">⚛️ React 18</span>
+              <span class="marquee-pill">⚡ Next.js 14 App Router</span>
+              <span class="marquee-pill">🟦 TypeScript</span>
+              <span class="marquee-pill">🟢 Node.js REST APIs</span>
+              <span class="marquee-pill">🐍 Python Algorithms</span>
+              <span class="marquee-pill">🐬 MySQL Relational DB</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =============================================================
+           FEATURED PROJECTS & PLAYABLE SIMULATORS
+           ============================================================= -->
+      <section class="section projects" id="projects">
+        <div class="wrap">
+          <div class="section-head">
+            <span class="badge">Projects</span>
+            <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
+            <p class="section-desc">Real interactive web applications built with production-grade architecture, authenticated dashboards, and AI integrations.</p>
+          </div>
+
+          <div class="projects-container">
+            <!-- Project 1: QuizMaster -->
+            <article class="project-showcase">
+              <div class="project-info">
+                <span class="project-category">Final Year Project · 2026</span>
+                <h3 class="project-name">QuizMaster — Exam &amp; Learning Platform</h3>
+                <p class="project-desc">
+                  An online examination management system with distinct role-based panels for Admins, Teachers, and Students. Features timed quizzes with automatic scoring, real-time class leaderboards, and AI image generation for exam questions routed through a teacher moderation approval workflow.
+                </p>
+                <div class="project-tags">
+                  <span class="project-tag">React.js</span>
+                  <span class="project-tag">Node.js</span>
+                  <span class="project-tag">Express</span>
+                  <span class="project-tag">MySQL</span>
+                  <span class="project-tag">REST APIs</span>
+                  <span class="project-tag">AI Generation API</span>
+                </div>
+                <div class="project-links">
+                  <a href="#contact" class="btn btn-primary btn-sm">
+                    <span>Discuss Project</span>
+                    <svg class="ico" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Interactive Simulator: QuizMaster -->
+              <div class="project-demo">
+                <div class="simulator-window">
+                  <div class="sim-header">
+                    <div class="sim-dots"><i></i><i></i><i></i></div>
+                    <div class="sim-url">quizmaster.app/dashboard/live</div>
+                  </div>
+                  <div class="sim-body">
+                    <!-- Role Switcher Tabs -->
+                    <div class="sim-tabs">
+                      <button class="sim-tab-btn active" data-role="student" type="button">Student Quiz</button>
+                      <button class="sim-tab-btn" data-role="admin" type="button">Admin Dashboard</button>
+                      <button class="sim-tab-btn" data-role="teacher" type="button">Teacher AI Queue</button>
+                    </div>
+
+                    <!-- Panel 1: Student Playable Quiz -->
+                    <div class="quiz-interactive" id="qm-student-panel">
+                      <div class="quiz-meta">
+                        <div class="quiz-timer">
+                          <svg class="ico" style="width: 1em; height: 1em;" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                          <span id="quizTimerVal">12:30</span> remaining
+                        </div>
+                        <div>Score: <b id="quizScoreVal" style="color: var(--primary-light);">6 / 7</b></div>
+                      </div>
+
+                      <div class="quiz-question-box">
+                        <span class="quiz-q-num">Question 7 of 10 · React Architecture</span>
+                        <h4 class="quiz-q-title">Which React hook is primarily used for handling side effects like data fetching?</h4>
+                        <div class="quiz-options">
+                          <button class="quiz-opt-btn" data-correct="false" type="button">A) useState()</button>
+                          <button class="quiz-opt-btn" data-correct="true" type="button">B) useEffect()</button>
+                          <button class="quiz-opt-btn" data-correct="false" type="button">C) useMemo()</button>
+                          <button class="quiz-opt-btn" data-correct="false" type="button">D) useContext()</button>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Panel 2: Admin Analytics (Hidden by default) -->
+                    <div class="admin-analytics" id="qm-admin-panel" style="display: none;">
+                      <div class="stats-grid-row">
+                        <div class="mini-stat-card">
+                          <span>Active Quizzes</span>
+                          <b>08</b>
+                        </div>
+                        <div class="mini-stat-card">
+                          <span>Avg Score</span>
+                          <b>76%</b>
+                        </div>
+                        <div class="mini-stat-card">
+                          <span>Pass Rate</span>
+                          <b>92%</b>
+                        </div>
+                      </div>
+
+                      <div style="font-size: 0.82rem; font-weight: 600; color: var(--text-muted); margin-top: 6px;">Class Leaderboard Performance</div>
+                      <div class="leaderboard-bars">
+                        <div class="lb-row">
+                          <span>Class A</span>
+                          <div class="lb-track"><div class="lb-fill" style="--w: 92%; width: 92%;"></div></div>
+                          <b>92%</b>
+                        </div>
+                        <div class="lb-row">
+                          <span>Class B</span>
+                          <div class="lb-track"><div class="lb-fill" style="--w: 81%; width: 81%;"></div></div>
+                          <b>81%</b>
+                        </div>
+                        <div class="lb-row">
+                          <span>Class C</span>
+                          <div class="lb-track"><div class="lb-fill" style="--w: 74%; width: 74%;"></div></div>
+                          <b>74%</b>
+                        </div>
+                        <div class="lb-row">
+                          <span>Class D</span>
+                          <div class="lb-track"><div class="lb-fill" style="--w: 63%; width: 63%;"></div></div>
+                          <b>63%</b>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Panel 3: Teacher Moderation Queue (Hidden by default) -->
+                    <div class="teacher-approval-queue" id="qm-teacher-panel" style="display: none;">
+                      <div style="font-size: 0.82rem; font-weight: 600; color: var(--text-muted); margin-bottom: 4px;">AI Images Awaiting Review</div>
+                      <div class="approval-item">
+                        <div class="ap-thumb">🧬</div>
+                        <div class="ap-details">
+                          <b>Q4 · Cell Structure Diagram</b>
+                          <span>Generated by Gemini Flash</span>
+                        </div>
+                        <button class="ap-action-btn" type="button">Approve</button>
+                      </div>
+                      <div class="approval-item">
+                        <div class="ap-thumb">🪐</div>
+                        <div class="ap-details">
+                          <b>Q7 · Solar Planetary Orbits</b>
+                          <span>Generated by SDXL API</span>
+                        </div>
+                        <button class="ap-action-btn" type="button">Approve</button>
+                      </div>
+                      <div class="approval-item">
+                        <div class="ap-thumb">🌊</div>
+                        <div class="ap-details">
+                          <b>Q9 · Water Cycle Ecosystem</b>
+                          <span>Generated by Gemini Flash</span>
+                        </div>
+                        <button class="ap-action-btn" type="button">Approve</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Project 2: ResumeAI -->
+            <article class="project-showcase reverse">
+              <div class="project-info">
+                <span class="project-category">Featured AI Project · 2026</span>
+                <h3 class="project-name">ResumeAI — ATS Analyzer &amp; Career Insights</h3>
+                <p class="project-desc">
+                  An intelligent resume parsing engine that scores, critiques, and matches CVs against job descriptions. Built with Next.js 14, TypeScript, Prisma and MySQL. Includes role-based authentication, ATS compliance metrics, skill-gap analysis, and actionable AI feedback.
+                </p>
+                <div class="project-tags">
+                  <span class="project-tag">Next.js 14</span>
+                  <span class="project-tag">TypeScript</span>
+                  <span class="project-tag">Tailwind CSS</span>
+                  <span class="project-tag">Prisma ORM</span>
+                  <span class="project-tag">MySQL</span>
+                  <span class="project-tag">NextAuth.js</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/laiba-nadeem479/resume-analyzer" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                    <svg class="ico" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                    <span>View GitHub Repo</span>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Interactive Simulator: ResumeAI ATS Scanner -->
+              <div class="project-demo">
+                <div class="simulator-window">
+                  <div class="sim-header">
+                    <div class="sim-dots"><i></i><i></i><i></i></div>
+                    <div class="sim-url">resumeai.dev/analyzer/scan</div>
+                  </div>
+                  <div class="sim-body">
+                    <div class="resume-sim-container">
+                      <!-- Preset Selector Chips -->
+                      <div class="resume-preset-bar">
+                        <span style="font-size: 0.8rem; color: var(--text-dim); font-weight: 600;">Job Profile:</span>
+                        <button class="preset-chip active" data-preset="fullstack" type="button">Full Stack Engineer</button>
+                        <button class="preset-chip" data-preset="frontend" type="button">Frontend Dev</button>
+                        <button class="preset-chip" data-preset="ai" type="button">AI Solutions</button>
+                      </div>
+
+                      <!-- ATS Score Ring & Metrics -->
+                      <div class="ats-score-card">
+                        <div class="ats-gauge-circle">
+                          <svg viewBox="0 0 120 120">
+                            <circle class="gauge-bg" cx="60" cy="60" r="50"></circle>
+                            <circle class="gauge-fill" id="atsGaugeFill" cx="60" cy="60" r="50"></circle>
+                          </svg>
+                          <div class="gauge-text">
+                            <b id="atsScoreNumber">94</b>
+                            <span>ATS Score</span>
+                          </div>
+                        </div>
+
+                        <div class="ats-breakdown-list">
+                          <div class="ats-bd-item">
+                            <div class="ats-bd-label"><span>Keyword Density</span><b id="atsKwVal">96%</b></div>
+                            <div class="ats-bd-track"><div class="ats-bd-fill" id="atsKwBar" style="width: 96%;"></div></div>
+                          </div>
+                          <div class="ats-bd-item">
+                            <div class="ats-bd-label"><span>Structure &amp; Formatting</span><b id="atsFmtVal">92%</b></div>
+                            <div class="ats-bd-track"><div class="ats-bd-fill" id="atsFmtBar" style="width: 92%;"></div></div>
+                          </div>
+                          <div class="ats-bd-item">
+                            <div class="ats-bd-label"><span>Measurable Metrics</span><b id="atsMetVal">88%</b></div>
+                            <div class="ats-bd-track"><div class="ats-bd-fill" id="atsMetBar" style="width: 88%;"></div></div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- AI Feedback Chips -->
+                      <div class="ats-feedback-chips">
+                        <span class="chip-tag good">✓ High Next.js &amp; TypeScript relevance</span>
+                        <span class="chip-tag good">✓ Clean section hierarchy</span>
+                        <span class="chip-tag improve">⚡ Add Docker / CI-CD keywords</span>
+                      </div>
+
+                      <button class="btn btn-primary btn-sm" id="raRunAnalysis" type="button" style="width: 100%;">
+                        ⚡ Run Analysis Again
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- =============================================================
+           EDUCATION & CERTIFICATIONS
+           ============================================================= -->
+      <section class="section education" id="education">
+        <div class="wrap">
+          <div class="section-head">
+            <span class="badge">Academic Journey</span>
+            <h2 class="section-title">Education &amp; <span class="gradient-text">Credentials</span></h2>
+            <p class="section-desc">Formal computer science foundation complemented by dedicated software engineering and programming certifications.</p>
+          </div>
+
+          <div class="edu-cards-grid">
+            <div class="glass edu-card">
+              <div class="edu-icon-badge">
+                <svg class="ico" style="width: 1.8em; height: 1.8em;" viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+              </div>
+              <div class="edu-content">
+                <span class="edu-type-tag">Undergraduate Degree · 2022 – 2026</span>
+                <h3 class="edu-degree-title">BS Information Technology</h3>
+                <p class="edu-institution">Hazrat Ayesha Saddiqa Model Degree and Commerce College</p>
+                <div class="edu-pills">
+                  <span class="edu-pill">Data Structures</span>
+                  <span class="edu-pill">Database Systems</span>
+                  <span class="edu-pill">Web Technologies</span>
+                  <span class="edu-pill">OOP</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="glass edu-card">
+              <div class="edu-icon-badge">
+                <svg class="ico" style="width: 1.8em; height: 1.8em;" viewBox="0 0 24 24"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+              </div>
+              <div class="edu-content">
+                <span class="edu-type-tag">Professional Certificate</span>
+                <h3 class="edu-degree-title">Advanced Python Programming</h3>
+                <p class="edu-institution">University of Engineering and Technology (UET) Lahore</p>
+                <div class="edu-pills">
+                  <span class="edu-pill">Automation</span>
+                  <span class="edu-pill">REST APIs</span>
+                  <span class="edu-pill">Flask</span>
+                  <span class="edu-pill">Algorithms</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =============================================================
+           SERVICES & INTERACTIVE SCOPE ESTIMATOR
+           ============================================================= -->
+      <section class="section services" id="services">
+        <div class="wrap">
+          <div class="section-head">
+            <span class="badge">Collaborations</span>
+            <h2 class="section-title">What I Can <span class="gradient-text">Build For You</span></h2>
+            <p class="section-desc">Open to full-time engineering roles, high-impact freelance projects, and tech team collaborations.</p>
+          </div>
+
+          <div class="services-grid">
+            <div class="glass service-card">
+              <div class="service-icon">
+                <svg class="ico" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+              </div>
+              <h3 class="service-title">Full Stack Web Apps</h3>
+              <p class="service-desc">
+                Production-ready web applications built from scratch with Next.js, React, Node.js REST APIs, authentication, and structured MySQL databases.
+              </p>
+            </div>
+
+            <div class="glass service-card">
+              <div class="service-icon">
+                <svg class="ico" viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+              </div>
+              <h3 class="service-title">Frontend Engineering</h3>
+              <p class="service-desc">
+                Pixel-perfect, accessible, and high-performance UI architectures in React, TypeScript, and Tailwind CSS with fluid animations and responsive physics.
+              </p>
+            </div>
+
+            <div class="glass service-card">
+              <div class="service-icon">
+                <svg class="ico" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 15h-2v-6h2zm0-8h-2V7h2z"></path></svg>
+              </div>
+              <h3 class="service-title">AI &amp; Smart Features</h3>
+              <p class="service-desc">
+                Embedding AI capabilities into applications: automated document parsing, content generation, and approval workflows that deliver real utility.
+              </p>
+            </div>
+          </div>
+
+          <!-- Interactive Scope Estimator -->
+          <div class="scope-calculator-card">
+            <div class="scope-header">
+              <h3 class="scope-title">⚡ Interactive Project Scope Estimator</h3>
+              <span class="badge">Click items to build your inquiry</span>
+            </div>
+
+            <div class="scope-options-grid">
+              <div class="scope-checkbox-label" data-service="Next.js Full Stack App">
+                <div class="custom-checkbox">✓</div>
+                <span>Next.js Full Stack App</span>
+              </div>
+              <div class="scope-checkbox-label" data-service="Modern React &amp; TypeScript UI">
+                <div class="custom-checkbox">✓</div>
+                <span>Modern React &amp; TypeScript UI</span>
+              </div>
+              <div class="scope-checkbox-label" data-service="Node.js REST API &amp; MySQL">
+                <div class="custom-checkbox">✓</div>
+                <span>Node.js REST API &amp; MySQL</span>
+              </div>
+              <div class="scope-checkbox-label" data-service="Full-Time Engineering Role">
+                <div class="custom-checkbox">✓</div>
+                <span>Full-Time Engineering Role</span>
+              </div>
+              <div class="scope-checkbox-label" data-service="Code Audit &amp; Performance">
+                <div class="custom-checkbox">✓</div>
+                <span>Code Audit &amp; Performance</span>
+              </div>
+            </div>
+
+            <div class="scope-footer">
+              <span class="scope-summary-text" id="scopeSelectedSummary">
+                Select one or more services above to tailor your project discussion.
+              </span>
+              <button class="btn btn-primary btn-sm" id="scopeGenerateBtn" type="button">
+                <span>Start Discussion</span>
+                <svg class="ico" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =============================================================
+           CONTACT SECTION & VISIBLE 3D D3 GLOBE
+           ============================================================= -->
+      <section class="section contact" id="contact">
+        <div class="wrap">
+          <div class="section-head">
+            <span class="badge">Get in Touch</span>
+            <h2 class="section-title">Let's <span class="gradient-text">Connect</span></h2>
+            <p class="section-desc">Have an open role, an exciting project, or want to collaborate? I'd love to hear from you.</p>
+          </div>
+
+          <div class="contact-layout-grid">
+            <!-- Left Column: Direct Links & 3D Globe -->
+            <div class="contact-left-col">
+              <div class="contact-channels">
+                <div class="contact-link-row">
+                  <a href="mailto:laibanadeem631@gmail.com" class="channel-info">
+                    <div class="channel-icon">
+                      <svg class="ico" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    </div>
+                    <span>laibanadeem631@gmail.com</span>
+                  </a>
+                  <button class="btn-icon" id="copyMailBtn" type="button" aria-label="Copy email address" title="Copy Email">
+                    <svg class="ico" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                  </button>
+                </div>
+                <div class="contact-link-row">
+                  <a href="https://www.linkedin.com/in/laiba-nadeem-707730362" target="_blank" rel="noopener noreferrer" class="channel-info">
+                    <div class="channel-icon">
+                      <svg class="ico" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                    </div>
+                    <span>linkedin.com/in/laiba-nadeem-707730362</span>
+                  </a>
+                </div>
+
+                <div class="contact-link-row">
+                  <a href="https://github.com/laiba-nadeem479" target="_blank" rel="noopener noreferrer" class="channel-info">
+                    <div class="channel-icon">
+                      <svg class="ico" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                    </div>
+                    <span>github.com/laiba-nadeem479</span>
+                  </a>
+                </div>
+              </div>
+
+              <!-- 3D Interactive D3 Globe Stage -->
+              <div class="globe-stage-wrapper">
+                <div class="globe-container" id="globe">
+                  <svg id="globeSvg"></svg>
+                </div>
+                <div class="globe-location-tooltip">
+                  <span class="pulse-dot"></span>
+                  <span>Lahore, Pakistan · Open to Remote &amp; Relocation</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Column: Interactive Contact Form -->
+            <form class="glass contact-form-glass" id="contactForm" novalidate>
+              <div class="form-group">
+                <span class="form-label">Quick Topic</span>
+                <div class="topic-presets">
+                  <button type="button" class="topic-btn" data-topic="a full-time engineering role">💼 Full-Time Role</button>
+                  <button type="button" class="topic-btn" data-topic="a freelance web application">⚡ Freelance Build</button>
+                  <button type="button" class="topic-btn" data-topic="a technical collaboration or coffee chat">☕ Networking</button>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="cf-name" class="form-label">Your Name</label>
+                <input type="text" id="cf-name" name="name" class="form-control" placeholder="Alex Morgan" required />
+              </div>
+
+              <div class="form-group">
+                <label for="cf-email" class="form-label">Your Email</label>
+                <input type="email" id="cf-email" name="email" class="form-control" placeholder="alex@company.com" required />
+              </div>
+
+              <div class="form-group">
+                <label for="cf-message" class="form-label">Your Message</label>
+                <textarea id="cf-message" name="message" class="form-control" rows="4" placeholder="Tell me a bit about your product, timeline or role..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width: 100%;">
+                <span>Send Message</span>
+                <svg class="ico" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+              </button>
+
+              <p class="form-feedback" id="formFeedback" aria-live="polite"></p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- =============================================================
+         FOOTER
+         ============================================================= -->
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <a href="#home" class="logo-link">
+              <div class="logo-badge">LN</div>
+              <!-- <span class="logo-text">Laiba<span>.dev</span></span> -->
+                            <span class="logo-text">Laiba.</span>
+
+            </a>
+            <p class="footer-desc">
+              Full Stack Developer building clean, accessible and AI-powered web experiences from Lahore, Pakistan.
+            </p>
+          </div>
+
+          <div class="footer-links-col">
+            <span class="footer-col-title">Explore</span>
+            <div class="footer-nav">
+              <a href="#home">Home</a>
+              <a href="#about">About</a>
+              <a href="#skills">Tech Stack</a>
+              <a href="#projects">Projects</a>
+              <a href="#services">Services</a>
+              <a href="#contact">Contact</a>
+            </div>
+          </div>
+
+          <div class="footer-links-col">
+            <span class="footer-col-title">Get in Touch</span>
+            <div class="footer-nav">
+              <a href="mailto:laibanadeem631@gmail.com">laibanadeem631@gmail.com</a>
+              <a href="https://www.linkedin.com/in/laiba-nadeem-707730362" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <a href="https://github.com/laiba-nadeem479" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a href="resume/Laiba-Nadeem-Resume.pdf" download="Laiba-Nadeem-Resume.pdf">Download CV</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <span>&copy; <span id="current-year"></span> Laiba Nadeem. All rights reserved.</span>
+
+        </div>
+      </div>
+    </footer>
+
+    <!-- Toast Notice Container -->
+    <div class="toast-notice" id="toast" role="status" aria-live="polite"></div>
+
+    <!-- D3, TopoJSON, and World Data (Local + Offline Ready) -->
+    <script src="d3.min.js"></script>
+    <script src="topojson.min.js"></script>
+    <script src="world-data.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+    <script src="globe.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
